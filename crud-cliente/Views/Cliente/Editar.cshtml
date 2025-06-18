@@ -1,0 +1,78 @@
+﻿@model crud_cliente.Models.Cliente;
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar</h1>
+
+<form method="post" asp-action="Editar">
+    <input asp-for="Id" hidden/>
+    <div class="border p-3">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <h2 class="text-intro pl-3">Editar Cliente</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="Nombre" class="form-label">Nombre del Cliente</label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="TipoDocumento" class="form-label">Tipo de Documento</label>
+                    <input asp-for="TipoDocumento" class="form-control" />
+                    <span asp-validation-for="TipoDocumento" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="Documento" class="form-label">Documento</label>
+                    <input asp-for="Documento" class="form-control" />
+                    <span asp-validation-for="Documento" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="Celular" class="form-label">Celular</label>
+                    <input asp-for="Celular" class="form-control" />
+                    <span asp-validation-for="Celular" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="Direccion" class="form-label">Direccion</label>
+                    <input asp-for="Direccion" class="form-control" />
+                    <span asp-validation-for="Direccion" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 d-md-block">
+
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+                <a asp-controller="Cliente" asp-action="Index" class="btn btn-success">Regresar</a>
+
+            </div>
+
+        </div>
+    </div>
+
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
